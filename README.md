@@ -109,8 +109,8 @@ CheetahExpress/
 
 ```json
 {
-  "email": "admin@cheetah.com",
-  "password": "admin123"
+    "nome": "Administrador",
+    "senha": "123456"
 }
 ```
 
@@ -119,7 +119,6 @@ CheetahExpress/
 ```json
 {
   "token": "jwt.token.aqui",
-  "expiresIn": 3600
 }
 ```
 
@@ -127,10 +126,8 @@ CheetahExpress/
 
 ```json
 {
-  "nome": "João Motorista",
-  "email": "joao@driver.com",
-  "password": "123456",
-  "role": "DRIVER"
+  "nome": "matheus",
+  "senha": "matheus"
 }
 ```
 
@@ -138,10 +135,10 @@ CheetahExpress/
 
 ```json
 {
-  "modelo": "Fiat Fiorino",
-  "placa": "ABC1D23",
-  "capacidadeKg": 500,
-  "motoristaId": 1
+  "motoristaId": 8,
+  "modelo": "Sprinter",
+  "placa": "ABC1D18",
+  "capacidadeKg": 800
 }
 ```
 
@@ -149,9 +146,10 @@ CheetahExpress/
 
 ```json
 {
-  "origem": "São Paulo",
-  "destino": "Campinas",
-  "distanciaKm": 98
+  "origem": "Centro",
+  "destino": "Zona Norte",
+  "distanciaKm": 18.4,
+  "tempoEstimadoMin": 35
 }
 ```
 
@@ -159,11 +157,11 @@ CheetahExpress/
 
 ```json
 {
-  "clienteId": 3,
-  "motoristaId": 1,
+  "pacotesIds": [4, 5],
+  "motoristaId": 7,
   "veiculoId": 1,
-  "rotaId": 2,
-  "status": "PENDENTE",
+  "rotaId": 1,
+  "status": "AGUARDANDO",
   "dataPrevisao": "2025-12-10"
 }
 ```
@@ -172,12 +170,10 @@ CheetahExpress/
 
 ```json
 {
-  "entregaId": 1,
-  "descricao": "Caixa com eletrônicos",
-  "pesoKg": 12.5,
-  "alturaCm": 30,
-  "larguraCm": 40,
-  "profundidadeCm": 20
+  "clienteId": 3,
+  "descricao": "PS5",
+  "pesoKg": 4,
+  "valorDeclarado": 150.0
 }
 ```
 
@@ -187,15 +183,15 @@ CheetahExpress/
 
 **Admin**
 
-* Email: `admin@cheetah.com`
+* Nome: `Administrador`
 * Senha: `admin123`
 
 **Cliente (CUSTOMER)**
 
-* Email: `cliente@cheetah.com`
+* Nome: `Cliente Padrão`
 * Senha: `cliente123`
 
 **Motorista (DRIVER)**
 
-* Email: `driver@cheetah.com`
+* Nome: `Motorista Padrão`
 * Senha: `driver123`
