@@ -56,4 +56,146 @@ Centralizar o fluxo logístico, permitindo que clientes, motoristas e administra
 - Entrega – Registro de pedidos de entrega, associando cliente, motorista, veículo e rota.
 - Pacote – Pacotes contidos em uma entrega (peso, dimensões, descrição).
 ### Relacionamentos
+
 <img width="1002" height="588" alt="Trabaio3 drawio" src="https://github.com/user-attachments/assets/92b85771-85ec-4003-8d18-d203a55aeda6" />
+
+
+### Rodando com Docker Compose
+
+```bash
+docker compose up -d
+```
+
+### Rodando a aplicação
+
+```bash
+./mvnw spring-boot:run
+```
+
+### Endpoints padrão
+
+* API: [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 🗂️ Estrutura de pastas
+
+```md
+CheetahExpress/
+├── src/
+│   ├── main/
+│   │   ├── java/com/cheetahexpress/
+│   │   │   ├── auth/
+│   │   │   ├── user/
+│   │   │   ├── vehicle/
+│   │   │   ├── route/
+│   │   │   ├── delivery/
+│   │   │   ├── pacote/
+│   │   │   └── config/
+│   │   └── resources/
+│   │       ├── application.yml
+│   │       └── db/migration/
+├── pom.xml
+└── README.md
+```
+
+---
+
+## 📦 Exemplos de Requests e Responses
+
+### 1. Login (JWT)
+
+**POST /auth/login**
+
+```json
+{
+  "email": "admin@cheetah.com",
+  "password": "admin123"
+}
+```
+
+**Response:**
+
+```json
+{
+  "token": "jwt.token.aqui",
+  "expiresIn": 3600
+}
+```
+
+### 2. Criar Usuário
+
+```json
+{
+  "nome": "João Motorista",
+  "email": "joao@driver.com",
+  "password": "123456",
+  "role": "DRIVER"
+}
+```
+
+### 3. Criar Veículo
+
+```json
+{
+  "modelo": "Fiat Fiorino",
+  "placa": "ABC1D23",
+  "capacidadeKg": 500,
+  "motoristaId": 1
+}
+```
+
+### 4. Criar Rota
+
+```json
+{
+  "origem": "São Paulo",
+  "destino": "Campinas",
+  "distanciaKm": 98
+}
+```
+
+### 5. Criar Entrega
+
+```json
+{
+  "clienteId": 3,
+  "motoristaId": 1,
+  "veiculoId": 1,
+  "rotaId": 2,
+  "status": "PENDENTE",
+  "dataPrevisao": "2025-12-10"
+}
+```
+
+### 6. Criar Pacote
+
+```json
+{
+  "entregaId": 1,
+  "descricao": "Caixa com eletrônicos",
+  "pesoKg": 12.5,
+  "alturaCm": 30,
+  "larguraCm": 40,
+  "profundidadeCm": 20
+}
+```
+
+---
+
+## 🔐 Credenciais de Desenvolvimento
+
+**Admin**
+
+* Email: `admin@cheetah.com`
+* Senha: `admin123`
+
+**Cliente (CUSTOMER)**
+
+* Email: `cliente@cheetah.com`
+* Senha: `cliente123`
+
+**Motorista (DRIVER)**
+
+* Email: `driver@cheetah.com`
+* Senha: `driver123`
